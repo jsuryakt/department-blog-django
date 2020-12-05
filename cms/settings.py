@@ -104,6 +104,18 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+TINYMCE_DEFAULT_CONFIG = {
+    'selector': 'textarea',  
+    'menubar': True
+    # 'menubar': 'file | edit | insert | view | format | table | tools | help'
+    # 'toolbar': "undo redo | styleselect | bold italic | link image",
+}
+
+# TINYMCE_DEFAULT_CONFIG = {
+#     'theme': 'advanced',
+#     'plugins': 'media',
+#     'theme_advanced_buttons1': 'bold,italic,underline,bullist,numlist,|,media,link,unlink,image',
+# }
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
