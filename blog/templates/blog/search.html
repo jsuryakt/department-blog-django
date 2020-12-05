@@ -1,0 +1,38 @@
+{% extends "blog/base.html" %}
+{% load static %}
+
+{% block extra_head %}
+    <link href="{% static 'blog/css/index.css' %}" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block content %}
+    <div id="main">
+        <div>
+            <h1>Search results...</h1>
+        </div>
+    </div>
+    <div id="card-holder">
+        {% if posts|length < 1 %}
+        <div>
+            <p>Your search - <b>{{ request.GET.query }}</b> ... - did not match any documents.</p>
+            <p>Suggestions:</p>
+            <li>Make sure that all words are spelled correctly.</li>
+            <li>Try different keywords.</li>
+            <li>Try more general keywords.</li>
+            <li>Try fewer keywords.</li>
+        </div>
+        {% else %}
+            {% for post in posts %}
+            <div class="card">
+                <a class="card-link" href="{% url 'post-detail' post.slug %}">
+                <img src="{{ post.image.url }}" alt=""/>
+                <div class="inner-div">
+                    <h3>{{ post.title|truncatewords:5 }}</h3>
+                    <p class="author"> {{ post.author.get_full_name }} <span class ="date"> | {{ post.date }}</span></p>
+                    <p class="para">{{ post.html_to_text|truncatechars:160 }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        {% endif %}    
+    </div>
+{% endblock %}

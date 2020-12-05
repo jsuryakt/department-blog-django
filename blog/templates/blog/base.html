@@ -1,0 +1,57 @@
+{% load static %}
+
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Django Blog App</title>
+        <link href="{% static 'blog/css/base.css' %}" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Raleway:100,400,400i,600,900&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/f9c7a50154.js" crossorigin="anonymous"></script>
+        {% block extra_head %}
+        {% endblock %}
+    </head>
+    <body>
+        <div id="top-bar">
+            <div class="logo-bar">
+                <div class="logo">
+                    <a href="{% url 'index' %}" style="height: 40px;">CS-Blogs</a>
+                </div>
+                <p style="margin-left: 2px;">SJEC</p>
+            </div>
+
+            <!-- Search Bar -->
+            <form method="GET" action="{% url 'search' %}">
+                {% csrf_token %}
+                <div class="search">
+                    <input type="text" name="query" class="searchTerm" placeholder="What are you looking for?">
+                    <button type="submit" class="searchButton">
+                    <i class="fa fa-search"></i>
+                </button>
+                </div>
+            </form>
+
+            <div id="menu-items-container">
+                {% if request.user.is_authenticated %}
+                    <p class="menu-item">Welcome {{ request.user.get_full_name }} !</p>
+                    <a href="{% url 'profile-update' request.user.slug %}" class="menu-item">My Profile</a>
+                    {% if request.user.is_author == True %}
+                    <a href="{% url 'my-posts' %}" class="menu-item">My Posts</a>
+                    {% endif %}
+                    <a href="{% url 'contact-us' %}" class="menu-item">Contact Us</a>
+                    <a href="{% url 'logout' %}" class="menu-item" style="margin-right: 0px;">Logout</a>
+                {% else %}
+                    <a href="{% url 'contact-us' %}" class="menu-item">Contact Us</a>
+                    <a href="{% url 'login' %}" class="menu-item">Login</a>
+                    <a href="{% url 'signup' %}"><button id="signup-btn">Signup</button></a>
+                {% endif %}
+            </div>
+            
+        </div>
+
+        {% block content %}
+        {% endblock %}
+        
+        <div id="bottom-bar"></div>
+    </body>
+</html>

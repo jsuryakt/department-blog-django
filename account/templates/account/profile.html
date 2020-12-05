@@ -1,0 +1,30 @@
+{% extends "blog/base.html" %}
+{% load static %}
+
+{% block extra_head %}
+    <link href="{% static 'account/css/profile.css' %}" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f9c7a50154.js" crossorigin="anonymous"></script>
+{% endblock %}
+
+{% block content %}
+<br>
+<br>
+<br>
+<br>
+    <div id="outer-wrapper">
+        <div id="inner-wrapper">
+            <div>
+                <div id="basicinfosection">
+                    <img src="{{ request.user.profile_image.url }}" alt="Profile Picture" id="profile-picture">
+                    <h1 id="username">{{ request.user.username }}</h1>
+                </div>
+            </div>
+
+            <div class="section-container">
+                <h3>Bio</h3>
+                <p>{{ user.bio }}</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

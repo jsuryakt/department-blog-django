@@ -1,0 +1,33 @@
+{% extends "blog/base.html" %}
+{% load static %}
+
+{% block extra_head %}
+    <link href="{% static 'blog/css/post_detail.css' %}" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,400,400i,500i,600,900&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+    <div id="article">
+        <img src="{{ post.image.url }}" alt="" id="cover-image"/>
+        <div class="blog-meta">
+            <h1>{{ post.title }}</h1>
+            <p class="author"> {{ post.author.get_full_name }} <span class ="date"> | {{ post.date }}</span></p>
+        </div>
+        <div class="blog-content">
+            {{ post.content|safe }}
+        </div>
+        <hr>
+        <div class="author-details">
+            <div id="author-pic">
+                <img src="{{ post.author.profile_image.url }}" alt=""/>
+            </div>
+            <div class="author-info">
+                <a href="{% url 'profile-view' post.author.slug %}"><p class="author-name">{{ post.author.get_full_name }}</p></a>
+                <p class="author-bio">{{ post.author.bio }}</p>
+            </div>
+        </div>
+        <div class="tag-container">
+            <button>{{ post.category.name }}</button>
+        </div>
+    </div>
+{% endblock %}

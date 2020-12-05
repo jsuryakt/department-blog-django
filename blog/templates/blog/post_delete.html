@@ -1,0 +1,25 @@
+{% extends "blog/base.html" %}
+{% load static %}
+
+{% block extra_head %}
+    <link href="{% static 'blog/css/forms.css' %}" rel="stylesheet" type="text/css">
+    {{ form.media }}
+{% endblock %}
+
+{% block content %}
+    <br>
+    <br>
+    <br>
+    <br>
+    <div id="outer-wrapper">
+        <div id="inner-wrapper">
+            <h3>Delete Post</h3>
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <p>Are you sure you want to delete "{{ object }}"?</p>
+                <input type="submit" value="Confirm" id="submit-btn">
+                <a href="{% url 'my-posts' %}" id="cancel-btn">Cancel</a>
+            </form>
+        </div>
+    </div>
+{% endblock %}

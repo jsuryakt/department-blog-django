@@ -1,0 +1,36 @@
+{% extends "blog/base.html" %}
+{% load static %}
+
+{% block extra_head %}
+<link href="{% static 'blog/css/index.css' %}" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block content %}
+    <div id="main">
+        <div>
+            <h1>Posts for category...</h1>
+        </div>
+        <div class="filter">
+            <p><img src="data:image/png;base64,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"/><span>Filter by Category</span></p>
+        </div>
+        <div class="category-buttons">
+            <a href="{% url 'index' %}"><button>All</button></a>
+            {% for category in categories %}
+            <a href="{% url 'category' category.slug %}"><button>{{ category.name }}</button></a>
+            {% endfor %}
+        </div>
+    </div>
+    <div id="card-holder">
+        {% for post in posts %}
+        <div class="card">
+            <a class="card-link" href="{% url 'post-detail' post.slug %}">
+            <img src="{{ post.image.url }}" alt=""/>
+            <div class="inner-div">
+                <h3>{{ post.title|truncatewords:5 }}</h3>
+                <p class="author"> {{ post.author.get_full_name }} <span class ="date"> | {{ post.date }}</span></p>
+                <p class="para">{{ post.html_to_text|truncatechars:160 }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}
