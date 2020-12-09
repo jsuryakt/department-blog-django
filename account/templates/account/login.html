@@ -1,32 +1,58 @@
-{% extends "blog/base.html" %}
 {% load static %}
 
-{% block extra_head %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign In</title>
     <link href="{% static 'account/css/forms.css' %}" rel="stylesheet" type="text/css">
-{% endblock %}
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="{% static 'account/fonts/material-icon/css/material-design-iconic-font.min.css' %}">
 
-{% block content %}
-<br>
-<br>
-<br>
-<br>
-    <div id="outer-wrapper">
-        <div id="inner-wrapper">
-            <h3>Login</h3>
-            <form method="POST" enctype="multipart/form-data">
-                {% csrf_token %}
-                {% for field in form %}
-                <div class="field-container">
-                    {{ field.label_tag }}
-                    {{ field }}
-                    {{ field.errors }}
+    <!-- Main css -->
+    <link rel="stylesheet" href="{% static 'account/css/style.css' %}">
+    
+</head>
+<body>
+<div class="main">
+    <div class="container">
+        <div class="signin-content">
+            <div class="signin-image">
+                <figure><img src="{% static 'account/images/signin-image.jpg' %}" alt="Sign In Image"></figure>
+                <a href="{% url 'signup' %}" class="signup-image-link">Don't have an Account? Sign Up</a>
+            </div>
+
+            <div class="signin-form">
+                <h2 class="form-title">Sign In</h2>
+                <form method="POST" class="register-form" id="login-form" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="username"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                        <input type="text" name="username" id="username" placeholder="Username"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="password"><i class="zmdi zmdi-lock"></i></label>
+                        <input type="password" name="password" id="password" placeholder="Password"/>
+                    </div>
+                    <div class="form-group form-button">
+                        <input type="submit" name="signin" id="signin" class="form-submit" value="Log in"/>
+                        <a href="{% url 'password-reset' %}" class="forgot-password">Forgot Password?</a>
+                    </div>
+                </form>
+                <div class="social-login">
+                    <span class="social-label">Or login with</span>
+                    <ul class="socials">
+                        <li><a href="#"><i class="display-flex-center zmdi zmdi-facebook"></i></a></li>
+                        <li><a href="#"><i class="display-flex-center zmdi zmdi-twitter"></i></a></li>
+                        <li><a href="#"><i class="display-flex-center zmdi zmdi-google"></i></a></li>
+                    </ul>
                 </div>
-                {% endfor %}
-                <div id="button-container">
-                    <input type="submit" value="LOGIN" id="submit-btn">
-                    <a href="{% url 'password-reset' %}" id="forgot-password">Forgot Password?</a>
-                </div>
-            </form>
+            </div>
         </div>
     </div>
-{% endblock %}
+</div>
+</body>
+</html>

@@ -1,31 +1,77 @@
-{% extends "blog/base.html" %}
 {% load static %}
 
-{% block extra_head %}
-    <link href="{% static 'account/css/forms.css' %}" rel="stylesheet" type="text/css">
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
 
-{% block content %}
-<br>
-<br>
-<br>
-<br>
-    <div id="outer-wrapper">
-        <div id="inner-wrapper">
-            <h3>Signup</h3>
-            <form method="POST" enctype="multipart/form-data">
-                {% csrf_token %}
-                {% for field in form %}
-                <div class="field-container">
-                    {{ field.label_tag }}
-                    {{ field }}
-                    {{ field.errors }}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up</title>
+
+    <link rel="stylesheet" href="{% static 'account/fonts/material-icon/css/material-design-iconic-font.min.css' %}">
+
+    <link href="{% static 'account/css/forms.css' %}" rel="stylesheet" type="text/css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="{% static 'account/css/style.css' %}">
+</head>
+
+<body>
+<div class="main">
+    <!-- Sign up form -->
+        <div class="container">
+            <div class="signup-content">
+                <div class="signup-form">
+                    <h2 class="form-title">Sign up</h2>
+                    <form method="POST" class="register-form" id="register-form" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="first_name"><i class="zmdi zmdi-account"></i></label>
+                            <input type="text" name="first_name" id="first_name" placeholder="First Name" />
+                            {{ form.first_name.errors }}
+                        </div>
+                        <div class="form-group">
+                            <label for="last_name"><i class="zmdi zmdi-account-o"></i></label>
+                            <input type="text" name="last_name" id="last_name" placeholder="Last Name" />
+                            {{ form.last_name.errors }}
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="username"><i class="zmdi zmdi-account-circle"></i></label>
+                            <input type="text" name="username" id="username" placeholder="Username" />
+                            {{ form.username.errors }}
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email"><i class="zmdi zmdi-email"></i></label>
+                            <input type="email" name="email" id="email" placeholder="Your Email" />
+                            {{ form.email.errors }}
+                        </div>
+                        <div class="form-group">
+                            <label for="password1"><i class="zmdi zmdi-lock"></i></label>
+                            <input type="password" name="password1" id="password1" placeholder="Password" />
+                            {{ form.password1.errors }}
+                        </div>
+                        <div class="form-group">
+                            <label for="password2"><i class="zmdi zmdi-lock-outline"></i></label>
+                            <input type="password" name="password2" id="password2" placeholder="Repeat your password" />
+                            {{ form.password2.errors }}
+                        </div>
+
+                        <div class="form-group form-button">
+                            <input type="submit" name="signup" id="signup" class="form-submit" value="Sign Up" />
+                        </div>
+                    </form>
                 </div>
-                {% endfor %}
-                <div id="button-container">
-                    <input type="submit" value="SIGNUP" id="submit-btn">
+                <div class="signup-image">
+                    <figure><img src="{% static 'account/images/signup-image.jpg' %}" alt="Sign Up Image"></figure>
+                    <a href="{% url 'login' %}" class="signup-image-link">Already have an account? Log In</a>
                 </div>
-            </form>
+            </div>
         </div>
     </div>
-{% endblock %}
+
+</body>
+
+</html>
