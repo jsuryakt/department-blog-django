@@ -55,7 +55,7 @@
     cursor: pointer;
 }
 
-#username {
+#fullname {
     font-family: Raleway,sans-serif;
     font-size: 24px;
     font-weight: 600;
@@ -63,6 +63,13 @@
     margin-left: 16px;
 }
 
+#username {
+    font-family: Raleway,sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0;
+    margin-left: 16px;
+}
 .section-container {
     border-top: 1.5px solid #dcdcdc;
     margin-top: 20px;

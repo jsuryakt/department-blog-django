@@ -11,8 +11,14 @@ class MyUser(AbstractUser):
     bio = models.CharField(max_length=500, blank=True)
     profile_image = models.ImageField(upload_to="account/profile_pic", default="profile-default.jpg", blank=True)
     is_author = models.BooleanField(default=False)
+    full_name = models.CharField(max_length=100, default="fullnaam")
+    # email = models.EmailField(unique=True)
 
-    REQUIRED_FIELDS = ['email', 'first_name', 'last_name']
+    first_name = None
+    last_name = None
+
+
+    REQUIRED_FIELDS = ['email', 'full_name']
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.username)

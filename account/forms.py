@@ -11,12 +11,12 @@ class SignUpForm(UserCreationForm):
 
     class Meta:
         model = MyUser
-        fields = ['username', 'password1', 'password2', 'email', 'first_name', 'last_name']
+        fields = ['username', 'password1', 'password2', 'email', 'full_name']
 
 class ProfileUpdateForm(ModelForm):
     class Meta:
         model = MyUser
-        fields = ['username', 'email', 'first_name', 'last_name', 'bio', 'profile_image']
+        fields = ['username', 'email', 'full_name', 'bio', 'profile_image']
 
 class AuthorRequestForm(ModelForm):
     class Meta:

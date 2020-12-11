@@ -31,7 +31,7 @@ class Post(models.Model):
     slug = models.CharField(max_length=60, unique=True, blank=True)
     # content = models.TextField()
     content = tinymce_models.HTMLField()
-    status = models.CharField(max_length=1, choices=statuses)
+    status = models.CharField(max_length=1, choices=statuses, default= 'D')
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     author = models.ForeignKey(MyUser, on_delete=models.CASCADE)
     image = models.ImageField(upload_to='blog/post', default="post-default.jpg", blank=True)

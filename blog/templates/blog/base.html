@@ -36,7 +36,7 @@
 
             <div id="menu-items-container">
                 {% if request.user.is_authenticated %}
-                    <p class="menu-item">Welcome {{ request.user.get_full_name }} !</p>
+                    <p class="menu-item">Welcome {{ request.user.full_name }} !</p>
                     <a href="{% url 'profile-update' request.user.slug %}" class="menu-item">My Profile</a>
                     {% if request.user.is_author == True %}
                     <a href="{% url 'my-posts' %}" class="menu-item">My Posts</a>

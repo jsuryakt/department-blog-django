@@ -11,7 +11,7 @@
         <img src="{{ post.image.url }}" alt="" id="cover-image"/>
         <div class="blog-meta">
             <h1>{{ post.title }}</h1>
-            <p class="author"> {{ post.author.get_full_name }} <span class ="date"> | {{ post.date }}</span></p>
+            <p class="author"> {{ post.author.full_name }} <span class ="date"> | {{ post.date }}</span></p>
         </div>
         <div class="blog-content">
             {{ post.content|safe }}
@@ -22,7 +22,7 @@
                 <img src="{{ post.author.profile_image.url }}" alt=""/>
             </div>
             <div class="author-info">
-                <a href="{% url 'profile-view' post.author.slug %}"><p class="author-name">{{ post.author.get_full_name }}</p></a>
+                <a href="{% url 'profile-view' post.author.slug %}"><p class="author-name">{{ post.author.full_name }}</p></a>
                 <p class="author-bio">{{ post.author.bio }}</p>
             </div>
         </div>

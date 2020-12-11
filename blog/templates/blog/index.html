@@ -27,7 +27,7 @@
             <img src="{{ post.image.url }}" alt="{{post.slug}}"/>
             <div class="inner-div">
                 <h3>{{ post.title|truncatewords:5 }}</h3>
-                <p class="author"> {{ post.author.get_full_name }} <span class ="date"> | {{ post.date }}</span></p>
+                <p class="author"> {{ post.author.full_name }} <span class ="date"> | {{ post.date }}</span></p>
                 <p class="para">{{ post.html_to_text|truncatechars:160 }}</p>
             </div>
         </div>

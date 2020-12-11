@@ -27,15 +27,15 @@
                     <form method="POST" class="register-form" id="register-form" enctype="multipart/form-data">
                         {% csrf_token %}
                         <div class="form-group">
-                            <label for="first_name"><i class="zmdi zmdi-account"></i></label>
-                            <input type="text" name="first_name" id="first_name" placeholder="First Name" />
-                            {{ form.first_name.errors }}
+                            <label for="full_name"><i class="zmdi zmdi-account"></i></label>
+                            <input type="text" name="full_name" id="full_name" placeholder="Full Name" />
+                            {{ form.full_name.errors }}
                         </div>
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <label for="last_name"><i class="zmdi zmdi-account-o"></i></label>
                             <input type="text" name="last_name" id="last_name" placeholder="Last Name" />
                             {{ form.last_name.errors }}
-                        </div>
+                        </div> -->
                         
                         <div class="form-group">
                             <label for="username"><i class="zmdi zmdi-account-circle"></i></label>

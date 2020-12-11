@@ -70,11 +70,11 @@
               </div>
               
               {% if form.non_field_errors %}
-              <ul class="form-errors">
+              <div class="form-errors">
                 {% for error in form.non_field_errors %}
-                <li>{{ error }}</li>
+                <p style="color: red;">{{ error }}</p>
                 {% endfor %}
-              </ul>
+              </div>
               {% endif %}
 
               <div class="form-group form-button">
