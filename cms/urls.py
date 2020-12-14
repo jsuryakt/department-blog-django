@@ -9,4 +9,4 @@ urlpatterns = [
     path('accounts/', include('account.urls')),
     path('tinymce/', include('tinymce.urls')),
     path('', PostListView.as_view(), name="index")
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

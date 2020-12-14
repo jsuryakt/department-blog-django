@@ -1,0 +1,149 @@
+body {
+    background-color: #ECF0F9;
+    margin: 0;
+}
+
+#top-bar {
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    align-items: center;
+    box-sizing: border-box;
+    box-shadow: 0 1px 1px #ccc;
+    width: 100%;
+    height: 80px;
+    z-index: 90;
+    padding: 1em 4.875em;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo-bar {
+    cursor: pointer;
+}
+
+.logo {
+    background-image: linear-gradient(269deg,#0048ff,#0096ff), linear-gradient(#000,#000);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: block;
+    font-family: "Raleway";
+    font-size: 32px;
+    font-weight: 700;
+    height: 37px;
+    letter-spacing: 1px;
+    color: rgb(0, 132, 255);
+}
+
+.logo-bar a {
+    text-decoration: none;
+}
+
+.logo-bar p {
+    font-family: Raleway,sans-serif;
+    font-size: 1em;
+    font-weight: 600;
+    /* font-style: italic; */
+    font-stretch: normal;
+    line-height: .8;
+    letter-spacing: .9px;
+    margin: 0;
+}
+
+.search {
+    width: 340px;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+.searchTerm {
+    width: 100%;
+    border: 2px solid #0044F0;
+    border-right: none;
+    padding: 5px;
+    height: 20px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #9DBFAF;
+  }
+  
+.searchTerm:focus{
+    color: #0044F0;
+  }
+  
+.searchButton {
+    width: 38px;
+    height: 34px;
+    border: 1px solid #0044F0;
+    background: #0044F0;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+  }
+
+.fa-search {
+    color: white;
+    font-size: 18px;
+}
+
+#menu-items-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#menu-items-container a {
+    text-decoration: none;
+    color: #000;
+}
+
+.menu-item {
+    font-family: "Raleway";
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: -0.9px;
+    line-height: 69.84px;
+    margin: 0px;
+    margin-right: 12px;
+}
+
+#signup-btn {
+    width: auto;
+    height: 40px;
+    min-width: 100px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    border-radius: 20px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border: none;
+    cursor: pointer;
+    padding: 8px 32px;
+    /* margin-right: 16px; */
+    color: #fff;
+    outline: none;
+    font-family: Raleway,sans-serif;
+    font-size: .9em;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: .03em;
+    background: #0084ff;
+    background: -webkit-linear-gradient(269deg,#0048ff,#0096ff);
+    background: -webkit-linear-gradient(181deg,#0048ff,#0096ff);
+    background: -o-linear-gradient(181deg,#0048ff,#0096ff);
+    background: linear-gradient(269deg,#0048ff,#0096ff);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0084ff",endColorstr="#0052ff",GradientType=1);
+}
+
+#bottom-bar {
+    background-color: #172146;
+    width: 100%;
+    height: 80px;
+    /* position: fixed; */
+    /* bottom: 0; */
+}
