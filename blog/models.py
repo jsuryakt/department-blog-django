@@ -51,3 +51,5 @@ class Post(models.Model):
         soup = BeautifulSoup(self.content, features="html.parser")
         text = soup.get_text()
         return text
+
+# class Contact(models.Model):

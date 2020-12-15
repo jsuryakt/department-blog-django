@@ -1,10 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from account.models import MyUser
-from django.views.generic import ListView, DetailView, CreateView, UpdateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, View
 # from django.contrib.auth.forms import UserCreationForm
 from account.forms import SignUpForm, ProfileUpdateForm, AuthorRequestForm
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.urls import reverse_lazy
+from django.contrib.auth import logout
 
 # Create your views here.
 class UserCreateView(CreateView):
@@ -57,3 +58,9 @@ class MyPostsView(LoginRequiredMixin, ListView):
         user = MyUser.objects.get(username = self.request.user)
         context['posts'] = user.post_set.all()
         return context
+
+class LogOutView(View):
+    def post(self, request, *args, **kwargs):
+        # is user is not authenticated
+        logout(request)
+        return redirect('login')

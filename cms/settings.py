@@ -146,9 +146,14 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
 
 # Login/Logout Redirect urls
 LOGIN_REDIRECT_URL = '/blogs'
-LOGOUT_REDIRECT_URL = '/blogs'
+# LOGOUT_REDIRECT_URL = '/blogs'
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = '' # Used in Deployment
+EMAIL_HOST_PASSWORD = '' # Used in Deployment
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 AUTH_USER_MODEL = 'account.MyUser'
 
