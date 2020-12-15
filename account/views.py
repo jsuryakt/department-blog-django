@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect
 from account.models import MyUser
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, View
-# from django.contrib.auth.forms import UserCreationForm
 from account.forms import SignUpForm, ProfileUpdateForm, AuthorRequestForm
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.urls import reverse_lazy
