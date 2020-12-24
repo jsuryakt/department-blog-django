@@ -5,6 +5,7 @@ from django.utils.text import slugify
 from tinymce import models as tinymce_models
 from bs4 import BeautifulSoup
 from django.urls import reverse
+from django.core.validators import RegexValidator
 
 # Create your models here.
 class Category(models.Model):
@@ -52,4 +53,13 @@ class Post(models.Model):
         text = soup.get_text()
         return text
 
-# class Contact(models.Model):
+class Contact(models.Model):
+    name = models.CharField(max_length=50)
+    email = models.EmailField()
+    phone_regex = RegexValidator(regex=r'^[6-9][0-9]{9}$', message="Phone number must be a 10 digit valid Indian number without any symbols, character, STD pin!")
+    phone_number = models.CharField(validators=[phone_regex], max_length=10, blank=True) # validators should be a list
+    message = models.CharField(max_length=500) #widget=forms.Textarea
+    REQUIRED_FIELDS = ['email', 'name', 'message']
+
+    def __str__(self):
+        return self.message

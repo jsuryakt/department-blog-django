@@ -62,4 +62,4 @@ class LogOutView(View):
     def post(self, request, *args, **kwargs):
         # is user is not authenticated
         logout(request)
-        return redirect('login')
+        return redirect('index')

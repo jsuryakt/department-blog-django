@@ -1,8 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from blog.models import Category, Post
 from account.models import MyUser
-# from django.views import View
 from django.views.generic import FormView, ListView, DetailView, CreateView, UpdateView, DeleteView
 from blog.forms import ContactForm, PostForm
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin, UserPassesTestMixin
@@ -41,6 +40,10 @@ class ContactView(FormView):
     form_class = ContactForm
     success_url = reverse_lazy("contact-us")
     template_name = "blog/contact_us.html"
+
+    def form_valid(self, form):
+        form.save()
+        return super().form_valid(form)
 
 class PostListView(ListView):
     model = Post

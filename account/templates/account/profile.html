@@ -16,15 +16,15 @@
         <div id="inner-wrapper">
             <div>
                 <div id="basicinfosection">
-                    <img src="{{ request.user.profile_image.url }}" alt="Profile Picture" id="profile-picture">
-                    <h1 id="fullname">{{ request.user.full_name }}</h1>
-                    <p id="username">( {{ request.user.username }} )</p>
+                    <img src="{{ user.profile_image.url }}" alt="Profile Picture" id="profile-picture">
+                    <h1 id="fullname">{{ user.full_name }}</h1>
+                    <p id="username">( {{ user.username }} )</p>
                 </div>
             </div>
 
             <div class="section-container">
                 <h3>Bio</h3>
-                <p>{{ request.user.bio }}</p>
+                <p>{{ user.bio }}</p>
             </div>
         </div>
     </div>
