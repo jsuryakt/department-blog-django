@@ -10,7 +10,7 @@ class MyUser(AbstractUser):
     slug = models.CharField(max_length=60, unique=True, blank=True)
     bio = models.CharField(max_length=500, blank=True)
     profile_image = models.ImageField(upload_to="account/profile_pic", default="profile-default.jpg", blank=True)
-    is_author = models.BooleanField(default=False)
+    is_author = models.BooleanField(default=True)
     full_name = models.CharField(max_length=100, default="fullnaam")
     # email = models.EmailField(unique=True)
 

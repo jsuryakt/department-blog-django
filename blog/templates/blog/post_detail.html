@@ -22,12 +22,13 @@
                 <img src="{{ post.author.profile_image.url }}" alt=""/>
             </div>
             <div class="author-info">
-                <a href="{% url 'profile-view' post.author.slug %}"><p class="author-name">{{ post.author.full_name }}</p></a>
+                <p class="author-name">{{ post.author.full_name }}</p>
                 <p class="author-bio">{{ post.author.bio }}</p>
             </div>
         </div>
         <div class="tag-container">
-            <button>{{ post.category.name }}</button>
+            <a href="{% url 'category' post.category.slug %}"><button>{{ post.category.name }}</button></a>
+            <!-- <button >{{ post.category.name }}</button> -->
         </div>
     </div>
 {% endblock %}
