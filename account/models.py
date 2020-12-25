@@ -34,7 +34,7 @@ class Request(models.Model):
     ]
     sender = models.ForeignKey(MyUser, on_delete=models.CASCADE)
     message = models.TextField()
-    is_approved = models.CharField(max_length=1, choices=statuses, default='F')
+    is_approved = models.CharField(max_length=1, choices=statuses, default='T')
 
     def __str__(self):
         return "Author Request by {}".format(self.sender.username)
