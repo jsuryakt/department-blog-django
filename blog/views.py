@@ -33,7 +33,7 @@ class CategoryView(ListView):
     
     def get_queryset(self):
         category = Category.objects.get(slug = self.request.resolver_match.kwargs.get('slug'))
-        queryset = Post.objects.filter(category=category)
+        queryset = Post.objects.filter(category=category, status="P")
         return queryset
     
 class ContactView(FormView):
