@@ -6,6 +6,7 @@ from django.views.generic import FormView, ListView, DetailView, CreateView, Upd
 from blog.forms import ContactForm, PostForm
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin, UserPassesTestMixin
 from django.urls import reverse_lazy
+from django.db import IntegrityError
 
 # Create your views here.
 class SearchView(ListView):
@@ -78,7 +79,11 @@ class PostCreateView(LoginRequiredMixin, PermissionRequiredMixin, CreateView):
 
     def form_valid(self, form):
         form.instance.author = self.request.user
-        return super().form_valid(form)
+        try:
+            return super().form_valid(form)
+        except IntegrityError:
+            e = "ERROR: Title already exists! \nPlease use a different title name"
+            return render(self.request, "blog/post_create_update.html", context={ 'form': form, 'e': e})
 
 class PostUpdateView(LoginRequiredMixin, PermissionRequiredMixin, UserPassesTestMixin, UpdateView):
     login_url = "/accounts/login"
@@ -96,7 +101,11 @@ class PostUpdateView(LoginRequiredMixin, PermissionRequiredMixin, UserPassesTest
 
     def form_valid(self, form):
         form.instance.author = self.request.user
-        return super().form_valid(form)
+        try:
+            return super().form_valid(form)
+        except IntegrityError:
+            e = "ERROR: Title already exists! \nPlease use a different title name"
+            return render(self.request, "blog/post_create_update.html", context={ 'form': form, 'e': e})
 
     def test_func(self, *args, **kwargs):
         current_user = self.request.user

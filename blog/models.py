@@ -28,7 +28,7 @@ class Post(models.Model):
         ('D', 'Draft'),
         ('P', 'Publish')
     ]
-    title = models.CharField(max_length=120)
+    title = models.CharField(max_length=120, unique=True)
     slug = models.CharField(max_length=60, unique=True, blank=True)
     # content = models.TextField()
     content = tinymce_models.HTMLField()

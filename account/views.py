@@ -51,7 +51,7 @@ class MyPostsView(LoginRequiredMixin, ListView):
     model = MyUser
     context_object_name = "user"
     template_name = "account/my_posts.html"
-
+    
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data()
         user = MyUser.objects.get(username = self.request.user)
