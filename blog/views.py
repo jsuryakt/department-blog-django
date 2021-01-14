@@ -1,11 +1,11 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from blog.models import Category, Post
+from blog.models import Category, Post, Comment
 from account.models import MyUser
 from django.views.generic import FormView, ListView, DetailView, CreateView, UpdateView, DeleteView
-from blog.forms import ContactForm, PostForm
+from blog.forms import ContactForm, PostForm, CommentForm
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin, UserPassesTestMixin
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from django.db import IntegrityError
 
 # Create your views here.
@@ -63,6 +63,23 @@ class PostDetailView(LoginRequiredMixin, DetailView):
     context_object_name = "post"
     template_name = "blog/post_detail.html"
     queryset = Post.objects.all()
+
+    def get_context_data(self, **kwargs):
+        post_obj = Post.objects.get(slug=self.kwargs.get('slug'))
+        context = super().get_context_data(**kwargs)
+        context['comments'] = Comment.objects.filter(post = post_obj).order_by('-id')
+        return context
+
+    def post(self, request, slug):
+        post_obj = Post.objects.get(slug=slug)
+
+        if request.method == 'POST':
+            comment_form = CommentForm(request.POST)
+            if comment_form.is_valid():
+                content = request.POST.get('content')
+                comment = Comment.objects.create(post = post_obj, user = request.user, content = content)
+                comment.save()
+        return redirect('post-detail', slug)
 
 class PostCreateView(LoginRequiredMixin, PermissionRequiredMixin, CreateView):
     login_url = "/accounts/login"

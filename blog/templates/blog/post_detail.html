@@ -1,34 +1,92 @@
-{% extends "blog/base.html" %}
-{% load static %}
+{% extends "blog/base.html" %} {% load static %} {% block extra_head %}
 
-{% block extra_head %}
-    <link href="{% static 'blog/css/post_detail.css' %}" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:100,400,400i,500i,600,900&display=swap" rel="stylesheet">
-{% endblock %}
+<link
+  href="{% static 'blog/css/comments.css' %}"
+  rel="stylesheet"
+  type="text/css"
+/>
 
-{% block content %}
-    <div id="article">
-        <img src="{{ post.image.url }}" alt="" id="cover-image"/>
-        <div class="blog-meta">
-            <h1>{{ post.title }}</h1>
-            <p class="author"> {{ post.author.full_name }} <span class ="date"> | {{ post.date }}</span></p>
-        </div>
-        <div class="blog-content">
-            {{ post.content|safe }}
-        </div>
-        <hr>
-        <div class="author-details">
-            <div id="author-pic">
-                <img src="{{ post.author.profile_image.url }}" alt=""/>
-            </div>
-            <div class="author-info">
-                <p class="author-name">{{ post.author.full_name }}</p>
-                <p class="author-bio">{{ post.author.bio }}</p>
-            </div>
-        </div>
-        <div class="tag-container">
-            <a href="{% url 'category' post.category.slug %}"><button>{{ post.category.name }}</button></a>
-            <!-- <button >{{ post.category.name }}</button> -->
-        </div>
+<link
+  href="{% static 'blog/css/post_detail.css' %}"
+  rel="stylesheet"
+  type="text/css"
+/>
+
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+  crossorigin="anonymous"
+/>
+
+<link
+  href="https://fonts.googleapis.com/css?family=Raleway:100,400,400i,500i,600,900&display=swap"
+  rel="stylesheet"
+/>
+
+{% endblock %} {% block content %}
+<div id="article">
+  <img src="{{ post.image.url }}" alt="" id="cover-image" />
+  <div class="blog-meta">
+    <h1>{{ post.title }}</h1>
+    <p class="author">
+      {{ post.author.full_name }} <span class="date"> | {{ post.date }}</span>
+    </p>
+  </div>
+  <div class="blog-content">{{ post.content|safe }}</div>
+  <hr />
+  <div class="author-details">
+    <div id="author-pic">
+      <img src="{{ post.author.profile_image.url }}" alt="" />
     </div>
+    <div class="author-info">
+      <p class="author-name">{{ post.author.full_name }}</p>
+      <p class="author-bio">{{ post.author.bio }}</p>
+    </div>
+  </div>
+  <div class="tag-container">
+    <a href="{% url 'category' post.category.slug %}"
+      ><button>{{ post.category.name }}</button></a>
+  </div>
+  <hr />
+  <div class="container">
+    <h3 id="cmt-title" class="fs-2">Comments</h3>
+    <form method="POST" action="{% url 'post-detail' post.slug %}">
+      {% csrf_token %}
+    <div class="pb-cmnt-container">
+      <input
+        type="text"
+        placeholder="Write your comment here!"
+        class="pb-cmnt-textarea"
+        name = "content"
+      />
+      <br />
+      <button class="cmt-button-op" type="submit">Add</button>
+      </form>
+    </div>
+    {% if comments %}
+      {% for comment in comments %}
+      <div class="card p-3 mt-2">
+        <div class="align-items-center">
+          <img
+            src="{{ comment.user.profile_image.url }}"
+            height="30"
+            width="30"
+            class="user-img rounded-circle mr-2"
+          />
+          <small class="fw-bold text-primary user">{{ comment.user }}</small>
+          <br />
+          <small class="fw-bold content">{{comment.content}}</small>
+          <small class="time">{{ comment.timestamp }}</small>
+        </div>
+      </div>
+      {% endfor %}
+    {% else %}
+    <p class="fw-light content fs-4">No comments on this Post.</p>
+    <p class="fw-light content text-muted fs-5">Add One ☝️</p>
+    {% endif %}
+
+  </div>
+</div>
+
 {% endblock %}

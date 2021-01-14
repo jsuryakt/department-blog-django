@@ -1,7 +1,7 @@
 from django import forms
 import re
 from django.forms import ModelForm
-from blog.models import Post, Contact
+from blog.models import Post, Contact, Comment
 from tinymce.widgets import TinyMCE
 
 class ContactForm(ModelForm):
@@ -16,3 +16,8 @@ class PostForm(ModelForm):
     class Meta:
         model = Post
         fields = ['title', 'content', 'category', 'image']
+
+class CommentForm(ModelForm):
+    class Meta:
+        model = Comment
+        fields = ['content',]

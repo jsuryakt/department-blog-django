@@ -1,0 +1,79 @@
+.container {
+  margin-bottom: 30px;
+}
+
+#cmt-title {
+  margin-top: 3%;
+  margin-left: 5%;
+  font-family: "Raleway";
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: -1.5px;
+  margin-bottom: 3%;
+}
+
+.pb-cmnt-container {
+  font-family: Lato;
+  margin-bottom: 30px;
+}
+
+.pb-cmnt-textarea {
+  font-family: "Raleway";
+  resize: none;
+  padding: 20px;
+  height: 10px;
+  width: 40%;
+  border: 1px solid rgba(0, 168, 255, 0.3);
+  margin-left: 5%;
+  margin-bottom: 2%;
+}
+
+.cmt-button-op {
+  margin-left: 34%;
+  width: auto;
+  height: 40px;
+  min-width: 100px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  border-radius: 20px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border: none;
+  cursor: pointer;
+  padding: 8px 32px;
+  color: #fff;
+  outline: none;
+  font-family: Raleway, sans-serif;
+  font-size: 0.9em;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: 0.03em;
+  background: #0084ff;
+  background: -webkit-linear-gradient(269deg, #0048ff, #0096ff);
+  background: -webkit-linear-gradient(181deg, #0048ff, #0096ff);
+  background: -o-linear-gradient(181deg, #0048ff, #0096ff);
+  background: linear-gradient(269deg, #0048ff, #0096ff);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0084ff",endColorstr="#0052ff",GradientType=1);
+}
+
+.card {
+  border: none;
+  box-shadow: 5px 6px 6px 2px #e9ecef;
+  border-radius: 4px;
+}
+
+.user-img {
+  margin-top: 4px;
+}
+.user {
+  margin-left: 1%;
+}
+
+.time {
+  float: right;
+}
+
+.content {
+  margin-left: 5%;
+}
