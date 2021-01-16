@@ -35,7 +35,7 @@ class Post(models.Model):
     status = models.CharField(max_length=1, choices=statuses, default= 'D')
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     author = models.ForeignKey(MyUser, on_delete=models.CASCADE)
-    image = models.ImageField(upload_to='blog/post', default="post-default.jpg", blank=True)
+    image = models.ImageField(upload_to='blog/post', default="post-default.jpg")
     date = models.DateField(auto_now=True)
 
     def __str__(self):
@@ -57,7 +57,7 @@ class Comment(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
     user = models.ForeignKey(MyUser, on_delete=models.CASCADE)
     content = models.TextField(max_length=460)
-    timestamp = models.TimeField(auto_now_add=True)
+    timestamp = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return "{} - {} - ({})".format(self.post.title, self.user.username,self.content)
