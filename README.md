@@ -4,8 +4,7 @@
 
 Blog project for the department of Computer Science, SJEC.
 
-Project is live at [**CS Blogs.**](https://csdept.pythonanywhere.com){:target="_blank"}
-
+Project is live at <a href="https://csdept.pythonanywhere.com" target="_blank"> **CS Blogs.** </a>
 > Backend:- Django.
 
 > Frontend:- HTML, CSS, Bootstrap.
