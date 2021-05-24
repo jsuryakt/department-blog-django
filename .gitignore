@@ -1,0 +1,6 @@
+env/
+media/
+static/
+db.sqlite3
+*/templates/blog
+*/static/blog/css
