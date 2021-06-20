@@ -30,6 +30,12 @@ h3 {
     margin-bottom: 0; */
 }
 
+p {
+    font-family: Raleway,sans-serif;
+    font-weight: 600;
+    font-stretch: normal;
+    color: #000;
+}
 .field-container {
     margin-top: 1.5em;
     width: 100%;
