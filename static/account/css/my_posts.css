@@ -1,0 +1,112 @@
+#outer-wrapper {
+    max-width: 800px;
+    margin: 40px auto;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 0 15px #ccc;
+    box-shadow: 0 0 15px #ccc;
+}
+
+#inner-wrapper {
+    padding: 36px;
+}
+
+#create-post {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #333333c5;
+    border-radius: 5px;
+    box-shadow: 0 5px 20px 0 rgba(0,0,0,.1);
+    cursor: pointer;
+}
+
+#create-post h2,a {
+    /* margin-top: 0;
+    margin-bottom: 0; */
+    /* font-size: .875em; */
+    font-weight: 900;
+    font-family: Raleway,sans-serif;
+    box-sizing: border-box;
+    color: #333333c5;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.fa-edit {
+    margin-left: 10px;
+    font-size: 1.5em;
+    color: #333333c5;
+}
+
+#cards-container {
+    padding: 32px 0px 12px 0px;
+}
+
+#card {
+    border: 2px solid #dcdcdc;
+    border-radius: 5px;
+    box-shadow: 0 5px 20px 0 rgba(0,0,0,.1);
+    cursor: pointer;
+    margin: 12px auto;
+}
+
+#card-inner-upper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#post-image {
+    height: 92px;
+}
+
+#post-image img {
+    height: 100%;
+    width: 156px;
+    border-top-left-radius: 5px;
+}
+
+#post-content h3 {
+    font-family: 'Raleway';
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0px;
+    margin-left: 12px;
+}
+
+#post-content p {
+    font-family: Raleway;
+    font-size: 14px;
+    font-weight: 400;
+    font-style: normal;
+    opacity: .5;
+    font-stretch: normal;
+    line-height: 1.43;
+    letter-spacing: .35px;
+    /* text-align: left; */
+    color: #000;
+    /* margin: .3em 0; */
+    white-space: pre-wrap;
+}
+
+#card-inner-lower {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 1.5px solid #dcdcdc;
+}
+
+#card-inner-lower a {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    font-size: .875em;
+    font-weight: 900;
+    font-family: Raleway,sans-serif;
+    box-sizing: border-box;
+    color: #0096ff;
+    cursor: pointer;
+    text-decoration: none;
+}

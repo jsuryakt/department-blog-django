@@ -1,0 +1,124 @@
+#outer-wrapper {
+    max-width: 680px;
+    margin: 44px auto;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 0 15px #ccc;
+    box-shadow: 0 0 15px #ccc;
+}
+
+#inner-wrapper {
+    padding: 5% 8%;
+}
+
+h3 {
+    margin-top: 16px;
+    margin-bottom: 44px;
+    font-size: 1.8em;
+    -o-object-fit: contain;
+    object-fit: contain;
+    font-family: Raleway,sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: -.9px;
+    text-align: left;
+    color: #000;
+    /* margin-top: 0;
+    margin-bottom: 0; */
+}
+
+.field-container {
+    margin-top: 1.5em;
+    width: 100%;
+    height: auto;
+    font-size: 16px;
+    /* -webkit-box-sizing: border-box; */
+    box-sizing: border-box;
+    /* display: inline-block; */
+    position: relative;
+    /* display: -ms-flexbox; */
+    display: flex;
+    /* -ms-flex-direction: column; */
+    flex-direction: column;
+    /* -ms-flex-pack: end; */
+    justify-content: flex-end;
+    /* margin-top: .825em; */
+}
+
+.field-container label {
+    display: block;
+    /* -webkit-transition: all .5s; */
+    /* -o-transition: all .5s; */
+    transition: all .5s;
+    font-family: Raleway,sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    text-align: left;
+}
+
+.field-container input {
+    padding: .675em 0;
+    font-size: 1em;
+    outline: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #ccc;
+    /* padding: .375em 0; */
+    width: 100%;
+    background-color: transparent;
+    position: relative;
+    font-family: Roboto,sans-serif;
+    /* font-size: .875em; */
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: .5px;
+    text-align: left;
+    color: #333;
+}
+
+#button-container {
+    margin-top: 44px;
+    margin-bottom: 0;
+}
+
+#submit-btn {
+    width: auto;
+    height: 40px;
+    min-width: 100px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    border-radius: 20px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border: none;
+    cursor: pointer;
+    padding: 8px 32px;
+    margin-right: 16px;
+    color: #fff;
+    outline: none;
+    font-family: Raleway,sans-serif;
+    font-size: .9em;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: .03em;
+    background: #0084ff;
+    background: -webkit-linear-gradient(269deg,#0048ff,#0096ff);
+    background: -webkit-linear-gradient(181deg,#0048ff,#0096ff);
+    background: -o-linear-gradient(181deg,#0048ff,#0096ff);
+    background: linear-gradient(269deg,#0048ff,#0096ff);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0084ff",endColorstr="#0052ff",GradientType=1);
+}
+
+#button-container a {
+    text-decoration: none;
+    font-family: Roboto;
+    font-weight: 600;
+    color: black;
+}

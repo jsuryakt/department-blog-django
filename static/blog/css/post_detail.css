@@ -1,0 +1,148 @@
+#article {
+    width: 938px;
+    /* height: 3024px; */
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 5px 30px 0 rgba(0,0,0,.1);
+    border: 1px solid rgba(0,168,255,.3);
+    margin: 120px auto;
+    margin-bottom: 60px;
+}
+
+#cover-image {
+    width: 100%;
+    height: 534px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.blog-meta {
+    width: 100%;
+    height: 108px;
+    padding: 12px 96px 0px 96px;
+}
+
+.blog-meta h1 {
+    font-family: "Raleway";
+    font-size: 28.8px;
+    font-weight: 600;
+    letter-spacing: -1.5px;
+}
+
+.author {
+    font-family: 'Raleway';
+    font-size: 15px;
+    font-weight: 500;
+    font-style: italic;
+    color: #0096ff;
+    margin-top: 6px;
+}
+
+.date {
+    font-family: "Roboto";
+    font-size: 15px;
+    font-weight: 400;
+    font-style: normal;
+    color: #000000;
+}
+
+.blog-content {
+    padding: 2em 6em;
+    padding-top: 0px;
+    overflow: hidden;
+}
+
+.blog-content p {
+    font-family: "Raleway";
+    font-size: 15px;
+    line-height: 1.5em;
+    letter-spacing: .2px;
+}
+
+strong {
+    font-weight: 600;
+}
+
+hr {
+    margin: 0%;
+}
+
+.author-details {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 160px;
+    padding: 2em 6em;
+    padding-bottom: 0px;
+}
+
+/* .author-pic {
+    width: 128px;
+    height: 128px;
+    margin-right: 32px;
+} */
+
+#author-pic img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.author-info {
+    width: 600px;
+    margin-left: 16px;
+    /* height: 128px; */
+    /* padding-top: 36px; */
+}
+
+.author-info a {
+    text-decoration: none;
+}
+
+.author-info p {
+    margin: 0%;
+    padding: 4px 0px;
+}
+
+.author-name {
+    color: rgb(0, 150, 255);;
+    font-family: "Raleway";
+    font-size: 16px;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.author-bio {
+    font-family: "Raleway";
+    font-size: 15px;
+    line-height: 1.5em;
+    letter-spacing: .2px;
+}
+
+.tag-container {
+    padding-bottom: 2em;
+    padding-left: 6em;
+    padding-right: 6em;
+}
+
+.tag-container button {
+    display: inline-block;
+    color: rgb(0, 132, 255);
+    border: 1px solid rgb(0, 132, 255);
+    border-radius: 20px;
+    background-color: transparent;
+    font-family: "Raleway";
+    font-size: 14px;
+    cursor: pointer;
+    min-width: 50px;
+    padding: 6px 14px;
+    margin: 5px;
+}
+
+#bottom-bar {
+    background-color: #172146;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+}
