@@ -151,8 +151,11 @@ LOGIN_REDIRECT_URL = '/blogs'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
+# Use gmail App password since less secure apps is discontinued, https://myaccount.google.com/u/3/apppasswords
 EMAIL_HOST_USER = '' # Used in Deployment
 EMAIL_HOST_PASSWORD = '' # Used in Deployment
+# # Uncomment in production and comment the console.EmailBackend
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 AUTH_USER_MODEL = 'account.MyUser'
